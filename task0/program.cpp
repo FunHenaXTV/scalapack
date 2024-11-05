@@ -97,15 +97,28 @@ class TMatrix {
 };
 
 template <typename T>
-std::ostream& operator<<(std::ostream& stream, TMatrix<T>& matrix) {
-    auto cols = matrix.GetCols();
-    auto rows = matrix.GetRows();
+std::ostream& operator<<(std::ostream& stream, const TMatrix<T>& matrix) {
+    int rows = matrix.GetRows();
+    int cols = matrix.GetCols();
+    int width = 10;
 
-    for (int r = 0; r < rows; r++) {
-        for (int c = 0; c < cols; c++) {
-            stream << std::setw(3) << *(matrix.Data() + rows * c + r) << " ";
+    auto horizontalSeparator = [&]() {
+        stream << "+";
+        for (int c = 0; c < cols; ++c) {
+            stream << std::string(width, '-') << "+";
         }
         stream << std::endl;
+    };
+
+    horizontalSeparator();
+    for (int r = 0; r < rows; ++r) {
+        stream << "|";
+        for (int c = 0; c < cols; ++c) {
+            stream << std::setw(width) << std::setprecision(4) << std::fixed
+                   << matrix[r][c] << "|";
+        }
+        stream << std::endl;
+        horizontalSeparator();
     }
 
     std::flush(stream);
