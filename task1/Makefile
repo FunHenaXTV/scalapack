@@ -1,15 +1,22 @@
-SCALAPACK_LIB = /home/nastyapion/prac423/scalapack-2.0.2
+SCALAPACK_LIB = /home/henax/scalapack/scalapack-2.0.2
+
+CURRENT_DIR := /home/henax/scalapack/task1/
 
 C_FLAGS = -L${SCALAPACK_LIB} -lscalapack -lgfortran -llapack -lblas
 CC = mpicxx
+LIB_NAME = $(CURRENT_DIR)libtask1lib.a
+SOURCES = $(CURRENT_DIR)task1lib.cpp
+OBJECTS = $(CURRENT_DIR)task1lib.o
+AR = ar
+ARFLAGS = rcs
 
-all: program run
+all: $(LIB_NAME)
 
-program:
-	${CC} program.cpp ${C_FLAGS} -o ./program.out
+$(LIB_NAME): $(OBJECTS)
+	$(AR) $(ARFLAGS) $(LIB_NAME) $(OBJECTS)
 
-run:
-	 mpirun -n 4 ./program.out 4 4_4.txt 0.1 4_4 5
+$(CURRENT_DIR)task1lib.o: $(CURRENT_DIR)task1lib.cpp
+	$(CC) $(CFLAGS) -c $(CURRENT_DIR)task1lib.cpp -o $(CURRENT_DIR)task1lib.o
 
 clean:
-	rm -rf *.out *.o
+	rm -rf *.out *.o *.a ../task1/*.o ../task1/*.a

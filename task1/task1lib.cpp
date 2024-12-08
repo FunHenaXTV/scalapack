@@ -1,4 +1,4 @@
-#include "program.h"
+#include "task1lib.h"
 
 #include <chrono>
 #include <cmath>
@@ -10,12 +10,13 @@
 #include <iostream>
 #include <random>
 #include <string>
+#include <algorithm>
 
 #include "mpi.h"
 
 template <typename T>
 class TMatrix {
-   public:
+public:
     TMatrix(const int n, const int m, const bool randomFill = true)
         : N(n), M(m), Data_(new T[N * M]) {
         if (randomFill) {
@@ -105,7 +106,7 @@ class TMatrix {
 
     ~TMatrix() { delete[] Data_; }
 
-   private:
+private:
     int N, M;
     T* Data_;
 };
@@ -113,7 +114,7 @@ class TMatrix {
 const double hbar = 1.0;
 
 class TScopeLogger {
-   public:
+public:
     TScopeLogger(const char* scopeName, int size)
         : StartTime(std::chrono::high_resolution_clock::now()) {
         for (auto i = 0; i < size; i++) {
@@ -131,10 +132,19 @@ class TScopeLogger {
                   << std::endl;
     }
 
-   private:
+private:
     std::chrono::high_resolution_clock::time_point StartTime;
     std::vector<char> ScopeName;
 };
+
+
+void FillFromVector(const TMatrix<std::complex<double>>& vector, TMatrix<std::complex<double>>& result) {
+    for (int i = 0; i < result.GetCols(); i++) {
+        for (int j = 0; j < result.GetCols(); j++) {
+            result[i][j] = vector[i][0] * std::conj(vector[j][0]);
+        }
+    }
+}
 
 template <typename T>
 std::ostream& operator<<(std::ostream& stream, TMatrix<T>& matrix) {
@@ -265,14 +275,14 @@ void printDiagonals(std::vector<std::vector<double>>& diagonals) {
     std::cout << "Diagonals: " << std::endl;
     for (const auto& diag : diagonals) {
         for (const auto& value : diag) {
-            std::cout << value << " ";
+            std::cout << std::setw(25) << value << " ";
         }
         std::cout << std::endl;
     }
 }
 
 template <typename T>
-double* get_eigen_e_v(int N, int NBlocks, int MBlocks, TMatrix<T>& localH,
+double* GetEigenEV(int N, int NBlocks, int MBlocks, TMatrix<T>& localH,
                       TMatrix<T>& localZ, const int* desch, const int* descz) {
     double* w = new double[N];
 
@@ -310,7 +320,7 @@ double* get_eigen_e_v(int N, int NBlocks, int MBlocks, TMatrix<T>& localH,
 }
 
 template <typename T>
-void calc_diag(int n, int N, double dT, int nrowsH, int ncolsH, int MBlocksH,
+void CalculateDiagonal(int n, int N, double dT, int nrowsH, int ncolsH, int MBlocksH,
                int NBlocksH, int MBlocksRo, int myrow, int mycol, int nprows,
                int npcols, int rsrc, int csrc, int context, TMatrix<T>& localZ,
                int* descz, bool mpiroot, TMatrix<T>& localRo, int* descro,
@@ -337,8 +347,7 @@ void calc_diag(int n, int N, double dT, int nrowsH, int ncolsH, int MBlocksH,
                     localDiagonalMatrix.Data()[(jloc - 1) * nrowsH + iloc - 1] =
                         exp(std::complex<double>(0, -w[i_glob - 1] * t / hbar));
                 } else {
-                    localDiagonalMatrix.Data()[(jloc - 1) * nrowsH + iloc - 1] =
-                        0;
+                    localDiagonalMatrix.Data()[(jloc - 1) * nrowsH + iloc - 1] = 0;
                 }
             }
         }
@@ -380,12 +389,12 @@ void calc_diag(int n, int N, double dT, int nrowsH, int ncolsH, int MBlocksH,
         int* descc4 = new int[9];
         descinit_(descc4, &N, &N, &NBlocksH, &MBlocksH, &rsrc, &csrc, &context,
                   &nrowsH, &info);
+
         pzgemm_(&notrans, &trans, &N, &N, &N, (double*)&alpha, localC3.Data(),
                 &one, &one, descc3, localC2.Data(), &one, &one, descc2,
                 (double*)&betta, localC4.Data(), &one, &one, descc4);
 
-        auto globalC4 =
-            GatherMatrix(mpiroot, context, N, N, NBlocksH, MBlocksH, localC4);
+        auto globalC4 = GatherMatrix(mpiroot, context, N, N, NBlocksH, MBlocksH, localC4);
 
         if (mpiroot) {
             std::vector<double> diag(N);
@@ -405,11 +414,24 @@ void calc_diag(int n, int N, double dT, int nrowsH, int ncolsH, int MBlocksH,
     }
 }
 
-int initialization(int argc, char** argv) {
+int GetMatrixElementCount(const std::string& filename) {
+    std::ifstream file(filename);
+    if (!file.is_open()) {
+        throw std::runtime_error("Cannot open file: " + filename);
+    }
+
+    return std::count(
+        std::istreambuf_iterator<char>(file),
+        std::istreambuf_iterator<char>(),
+        ','
+    );
+}
+
+int GetDensityMatricesDiagonalsSequence(int argc, char** argv) {
     int info = 0;
 
-    int N, n;
-    double dT;
+    int N = 0, n = 0;
+    double dT = 0;
     int NBlocksH = 1, MBlocksH = 1;
     int NBlocksRo = 1, MBlocksRo = 1;
 
@@ -422,8 +444,7 @@ int initialization(int argc, char** argv) {
 
     if (argc < 6) {
         if (mpiroot) {
-            std::cerr << "Usage: ./mpirun -np <nprocs> N matrix_file dT H.bin n"
-                      << std::endl;
+            std::cerr << "Usage: ./mpirun -np <nprocs> N matrix_file dT H.bin n" << std::endl;
         }
 
         MPI_Finalize();
@@ -434,26 +455,53 @@ int initialization(int argc, char** argv) {
     stream << argv[1] << " " << argv[3] << " " << argv[5];
     stream >> N >> dT >> n;
 
+    std::string fnameRo(argv[2]);
+    std::string fnameH(argv[4]);
+
+    int matrixSize = GetMatrixElementCount(argv[2]);
+
+    if (matrixSize != 0 && matrixSize != N && matrixSize != N * N) {
+        if (mpiroot) {
+            std::cerr << "Matrix ro has wrong sizes! Expected N x N, N x 1, 1 x 1." << std::endl;
+        }
+
+        MPI_Finalize();
+        return 1;
+    }
+
+    int roRows = matrixSize != 1 ? N : 1;
+    int roCols = std::max(1, matrixSize / N);
+
     TMatrix<std::complex<double>> globalRo(N, N, false);
     TMatrix<std::complex<double>> globalH(N, N, false);
 
-    std::string fname_ro(argv[2]);
-    std::string fname_H(argv[4]);
-
     if (mpiroot) {
-        TScopeLogger scopeLogger("fill_matrix", sizeof("fill_matrix"));
-        globalRo.FillFromFile(fname_ro);
+        // TScopeLogger scopeLogger("fill_matrix", sizeof("fill_matrix"));
+        if (matrixSize == N * N) {
+            globalRo.FillFromFile(fnameRo);
+        } else if (matrixSize == N) {
+            TMatrix<std::complex<double>> vector(N, 1, false /* randomFill */);
+            vector.FillFromFile(fnameRo);
+            FillFromVector(vector, globalRo);
+        } else if (matrixSize == 0) {
+            int state = 0;
+            std::ifstream file(fnameRo);
+            file >> state;
+
+            globalRo[state][state] = std::complex<double>(1, 0);
+        }
+
 
         std::cout << "Matrix ro:" << std::endl;
         std::cout << globalRo << std::endl;
 
-        globalH.FillFromBinFile(fname_H);
+        globalH.FillFromBinFile(fnameH);
 
         std::cout << "Matrix H:" << std::endl;
         std::cout << globalH << std::endl;
     }
 
-    int dims[2];
+    int dims[2] = {0, 0};
     MPI_Dims_create(nprocs, 2, dims);
     int nprow = dims[0];
     int npcol = dims[1];
@@ -488,8 +536,7 @@ int initialization(int argc, char** argv) {
               &nrowsRo, &info);
 
     TMatrix<std::complex<double>> localZ(nrowsH, ncolsH, false);
-    double* w =
-        get_eigen_e_v(N, NBlocksH, MBlocksH, localH, localZ, desch, descz);
+    double* w = GetEigenEV(N, NBlocksH, MBlocksH, localH, localZ, desch, descz);
 
     if (mpiroot) {
         std::cout << std::endl << "Eigenevalues: ";
@@ -517,7 +564,7 @@ int initialization(int argc, char** argv) {
 
     std::vector<std::vector<double>> diagonals;
 
-    calc_diag(n, N, dT, nrowsH, ncolsH, MBlocksH, NBlocksH, MBlocksRo, myrow,
+    CalculateDiagonal(n, N, dT, nrowsH, ncolsH, MBlocksH, NBlocksH, MBlocksRo, myrow,
               mycol, nprows, npcols, rsrc, csrc, context, localZ, descz,
               mpiroot, localRo, descro, ncolsRo, diagonals, w, nprocs, myrank);
 
@@ -533,13 +580,6 @@ int initialization(int argc, char** argv) {
 
     Cblacs_gridexit(context);
     Cblacs_exit(0);
-
-    return 0;
-}
-int main(int argc, char** argv) {
-    if (initialization(argc, argv)) {
-        return 1;
-    }
 
     return 0;
 }

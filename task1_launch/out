@@ -1,0 +1,1971 @@
+==3729443== Memcheck, a memory error detector
+==3729443== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==3729443== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==3729443== Command: ./program.out 4 4_4.txt 0.1 4_4 5
+==3729443== 
+==3729442== Memcheck, a memory error detector
+==3729442== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==3729442== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==3729442== Command: ./program.out 4 4_4.txt 0.1 4_4 5
+==3729442== 
+==3729444== Memcheck, a memory error detector
+==3729444== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==3729444== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==3729444== Command: ./program.out 4 4_4.txt 0.1 4_4 5
+==3729444== 
+==3729445== Memcheck, a memory error detector
+==3729445== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==3729445== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==3729445== Command: ./program.out 4 4_4.txt 0.1 4_4 5
+==3729445== 
+==3729442== Syscall param socketcall.getsockopt(optlen) points to uninitialised byte(s)
+==3729442==    at 0x58CA79E: getsockopt_syscall (getsockopt.c:29)
+==3729442==    by 0x58CA79E: getsockopt (getsockopt.c:94)
+==3729442==    by 0x6A32157: pmix_ptl_base_set_timeout (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729442==    by 0x6A39A1A: pmix_ptl_base_make_connection (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729442==    by 0x6A40DF3: ??? (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729442==    by 0x69403C1: PMIx_Init (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729442==    by 0x68CFE4A: ext3x_client_init (in /usr/lib/x86_64-linux-gnu/openmpi/lib/openmpi3/mca_pmix_ext3x.so)
+==3729442==    by 0x60B08BF: ??? (in /usr/lib/x86_64-linux-gnu/openmpi/lib/openmpi3/mca_ess_pmi.so)
+==3729442==    by 0x5B5C4CB: orte_init (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729442==    by 0x5422418: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729442==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729442==  Address 0x1ffeffde2c is on thread 1's stack
+==3729442==  in frame #2, created by pmix_ptl_base_make_connection (???:)
+==3729442==  Uninitialised value was created by a stack allocation
+==3729442==    at 0x6A398E4: pmix_ptl_base_make_connection (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729442== 
+==3729442== Syscall param socketcall.getsockopt(optlen_out) points to uninitialised byte(s)
+==3729442==    at 0x58CA79E: getsockopt_syscall (getsockopt.c:29)
+==3729442==    by 0x58CA79E: getsockopt (getsockopt.c:94)
+==3729442==    by 0x6A32157: pmix_ptl_base_set_timeout (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729442==    by 0x6A39A1A: pmix_ptl_base_make_connection (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729442==    by 0x6A40DF3: ??? (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729442==    by 0x69403C1: PMIx_Init (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729442==    by 0x68CFE4A: ext3x_client_init (in /usr/lib/x86_64-linux-gnu/openmpi/lib/openmpi3/mca_pmix_ext3x.so)
+==3729442==    by 0x60B08BF: ??? (in /usr/lib/x86_64-linux-gnu/openmpi/lib/openmpi3/mca_ess_pmi.so)
+==3729442==    by 0x5B5C4CB: orte_init (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729442==    by 0x5422418: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729442==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729442==  Address 0x1ffeffde2c is on thread 1's stack
+==3729442==  in frame #2, created by pmix_ptl_base_make_connection (???:)
+==3729442==  Uninitialised value was created by a stack allocation
+==3729442==    at 0x6A398E4: pmix_ptl_base_make_connection (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729442== 
+==3729443== Syscall param socketcall.getsockopt(optlen) points to uninitialised byte(s)
+==3729443==    at 0x58CA79E: getsockopt_syscall (getsockopt.c:29)
+==3729443==    by 0x58CA79E: getsockopt (getsockopt.c:94)
+==3729443==    by 0x6A32157: pmix_ptl_base_set_timeout (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729443==    by 0x6A39A1A: pmix_ptl_base_make_connection (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729443==    by 0x6A40DF3: ??? (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729443==    by 0x69403C1: PMIx_Init (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729443==    by 0x68CFE4A: ext3x_client_init (in /usr/lib/x86_64-linux-gnu/openmpi/lib/openmpi3/mca_pmix_ext3x.so)
+==3729443==    by 0x60B08BF: ??? (in /usr/lib/x86_64-linux-gnu/openmpi/lib/openmpi3/mca_ess_pmi.so)
+==3729443==    by 0x5B5C4CB: orte_init (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729443==    by 0x5422418: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729443==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729443==  Address 0x1ffeffde2c is on thread 1's stack
+==3729443==  in frame #2, created by pmix_ptl_base_make_connection (???:)
+==3729443==  Uninitialised value was created by a stack allocation
+==3729443==    at 0x6A398E4: pmix_ptl_base_make_connection (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729443== 
+==3729443== Syscall param socketcall.getsockopt(optlen_out) points to uninitialised byte(s)
+==3729443==    at 0x58CA79E: getsockopt_syscall (getsockopt.c:29)
+==3729443==    by 0x58CA79E: getsockopt (getsockopt.c:94)
+==3729443==    by 0x6A32157: pmix_ptl_base_set_timeout (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729443==    by 0x6A39A1A: pmix_ptl_base_make_connection (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729443==    by 0x6A40DF3: ??? (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729443==    by 0x69403C1: PMIx_Init (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729443==    by 0x68CFE4A: ext3x_client_init (in /usr/lib/x86_64-linux-gnu/openmpi/lib/openmpi3/mca_pmix_ext3x.so)
+==3729443==    by 0x60B08BF: ??? (in /usr/lib/x86_64-linux-gnu/openmpi/lib/openmpi3/mca_ess_pmi.so)
+==3729443==    by 0x5B5C4CB: orte_init (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729443==    by 0x5422418: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729443==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729443==  Address 0x1ffeffde2c is on thread 1's stack
+==3729443==  in frame #2, created by pmix_ptl_base_make_connection (???:)
+==3729443==  Uninitialised value was created by a stack allocation
+==3729443==    at 0x6A398E4: pmix_ptl_base_make_connection (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729443== 
+==3729444== Syscall param socketcall.getsockopt(optlen) points to uninitialised byte(s)
+==3729444==    at 0x58CA79E: getsockopt_syscall (getsockopt.c:29)
+==3729444==    by 0x58CA79E: getsockopt (getsockopt.c:94)
+==3729444==    by 0x6A32157: pmix_ptl_base_set_timeout (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729444==    by 0x6A39A1A: pmix_ptl_base_make_connection (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729444==    by 0x6A40DF3: ??? (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729444==    by 0x69403C1: PMIx_Init (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729444==    by 0x68CFE4A: ext3x_client_init (in /usr/lib/x86_64-linux-gnu/openmpi/lib/openmpi3/mca_pmix_ext3x.so)
+==3729444==    by 0x60B08BF: ??? (in /usr/lib/x86_64-linux-gnu/openmpi/lib/openmpi3/mca_ess_pmi.so)
+==3729444==    by 0x5B5C4CB: orte_init (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729444==    by 0x5422418: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729444==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729444==  Address 0x1ffeffde2c is on thread 1's stack
+==3729444==  in frame #2, created by pmix_ptl_base_make_connection (???:)
+==3729444==  Uninitialised value was created by a stack allocation
+==3729444==    at 0x6A398E4: pmix_ptl_base_make_connection (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729444== 
+==3729444== Syscall param socketcall.getsockopt(optlen_out) points to uninitialised byte(s)
+==3729444==    at 0x58CA79E: getsockopt_syscall (getsockopt.c:29)
+==3729444==    by 0x58CA79E: getsockopt (getsockopt.c:94)
+==3729444==    by 0x6A32157: pmix_ptl_base_set_timeout (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729444==    by 0x6A39A1A: pmix_ptl_base_make_connection (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729444==    by 0x6A40DF3: ??? (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729444==    by 0x69403C1: PMIx_Init (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729444==    by 0x68CFE4A: ext3x_client_init (in /usr/lib/x86_64-linux-gnu/openmpi/lib/openmpi3/mca_pmix_ext3x.so)
+==3729444==    by 0x60B08BF: ??? (in /usr/lib/x86_64-linux-gnu/openmpi/lib/openmpi3/mca_ess_pmi.so)
+==3729444==    by 0x5B5C4CB: orte_init (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729444==    by 0x5422418: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729444==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729444==  Address 0x1ffeffde2c is on thread 1's stack
+==3729444==  in frame #2, created by pmix_ptl_base_make_connection (???:)
+==3729444==  Uninitialised value was created by a stack allocation
+==3729444==    at 0x6A398E4: pmix_ptl_base_make_connection (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729444== 
+==3729442== Syscall param setsockopt(optlen) contains uninitialised byte(s)
+==3729442==    at 0x58CAC7E: setsockopt_syscall (setsockopt.c:29)
+==3729442==    by 0x58CAC7E: setsockopt (setsockopt.c:95)
+==3729442==    by 0x6A39BA9: pmix_ptl_base_make_connection (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729442==    by 0x6A40DF3: ??? (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729442==    by 0x69403C1: PMIx_Init (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729442==    by 0x68CFE4A: ext3x_client_init (in /usr/lib/x86_64-linux-gnu/openmpi/lib/openmpi3/mca_pmix_ext3x.so)
+==3729442==    by 0x60B08BF: ??? (in /usr/lib/x86_64-linux-gnu/openmpi/lib/openmpi3/mca_ess_pmi.so)
+==3729442==    by 0x5B5C4CB: orte_init (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729442==    by 0x5422418: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729442==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729442==  Uninitialised value was created by a stack allocation
+==3729442==    at 0x6A398E4: pmix_ptl_base_make_connection (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729442== 
+==3729443== Syscall param setsockopt(optlen) contains uninitialised byte(s)
+==3729443==    at 0x58CAC7E: setsockopt_syscall (setsockopt.c:29)
+==3729443==    by 0x58CAC7E: setsockopt (setsockopt.c:95)
+==3729443==    by 0x6A39BA9: pmix_ptl_base_make_connection (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729443==    by 0x6A40DF3: ??? (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729443==    by 0x69403C1: PMIx_Init (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729443==    by 0x68CFE4A: ext3x_client_init (in /usr/lib/x86_64-linux-gnu/openmpi/lib/openmpi3/mca_pmix_ext3x.so)
+==3729443==    by 0x60B08BF: ??? (in /usr/lib/x86_64-linux-gnu/openmpi/lib/openmpi3/mca_ess_pmi.so)
+==3729443==    by 0x5B5C4CB: orte_init (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729443==    by 0x5422418: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729443==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729443==  Uninitialised value was created by a stack allocation
+==3729443==    at 0x6A398E4: pmix_ptl_base_make_connection (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729443== 
+==3729444== Syscall param setsockopt(optlen) contains uninitialised byte(s)
+==3729444==    at 0x58CAC7E: setsockopt_syscall (setsockopt.c:29)
+==3729444==    by 0x58CAC7E: setsockopt (setsockopt.c:95)
+==3729444==    by 0x6A39BA9: pmix_ptl_base_make_connection (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729444==    by 0x6A40DF3: ??? (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729444==    by 0x69403C1: PMIx_Init (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729444==    by 0x68CFE4A: ext3x_client_init (in /usr/lib/x86_64-linux-gnu/openmpi/lib/openmpi3/mca_pmix_ext3x.so)
+==3729444==    by 0x60B08BF: ??? (in /usr/lib/x86_64-linux-gnu/openmpi/lib/openmpi3/mca_ess_pmi.so)
+==3729444==    by 0x5B5C4CB: orte_init (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729444==    by 0x5422418: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729444==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729444==  Uninitialised value was created by a stack allocation
+==3729444==    at 0x6A398E4: pmix_ptl_base_make_connection (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729444== 
+==3729445== Syscall param socketcall.getsockopt(optlen) points to uninitialised byte(s)
+==3729445==    at 0x58CA79E: getsockopt_syscall (getsockopt.c:29)
+==3729445==    by 0x58CA79E: getsockopt (getsockopt.c:94)
+==3729445==    by 0x6A32157: pmix_ptl_base_set_timeout (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729445==    by 0x6A39A1A: pmix_ptl_base_make_connection (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729445==    by 0x6A40DF3: ??? (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729445==    by 0x69403C1: PMIx_Init (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729445==    by 0x68CFE4A: ext3x_client_init (in /usr/lib/x86_64-linux-gnu/openmpi/lib/openmpi3/mca_pmix_ext3x.so)
+==3729445==    by 0x60B08BF: ??? (in /usr/lib/x86_64-linux-gnu/openmpi/lib/openmpi3/mca_ess_pmi.so)
+==3729445==    by 0x5B5C4CB: orte_init (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729445==    by 0x5422418: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729445==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729445==  Address 0x1ffeffde2c is on thread 1's stack
+==3729445==  in frame #2, created by pmix_ptl_base_make_connection (???:)
+==3729445==  Uninitialised value was created by a stack allocation
+==3729445==    at 0x6A398E4: pmix_ptl_base_make_connection (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729445== 
+==3729445== Syscall param socketcall.getsockopt(optlen_out) points to uninitialised byte(s)
+==3729445==    at 0x58CA79E: getsockopt_syscall (getsockopt.c:29)
+==3729445==    by 0x58CA79E: getsockopt (getsockopt.c:94)
+==3729445==    by 0x6A32157: pmix_ptl_base_set_timeout (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729445==    by 0x6A39A1A: pmix_ptl_base_make_connection (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729445==    by 0x6A40DF3: ??? (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729445==    by 0x69403C1: PMIx_Init (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729445==    by 0x68CFE4A: ext3x_client_init (in /usr/lib/x86_64-linux-gnu/openmpi/lib/openmpi3/mca_pmix_ext3x.so)
+==3729445==    by 0x60B08BF: ??? (in /usr/lib/x86_64-linux-gnu/openmpi/lib/openmpi3/mca_ess_pmi.so)
+==3729445==    by 0x5B5C4CB: orte_init (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729445==    by 0x5422418: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729445==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729445==  Address 0x1ffeffde2c is on thread 1's stack
+==3729445==  in frame #2, created by pmix_ptl_base_make_connection (???:)
+==3729445==  Uninitialised value was created by a stack allocation
+==3729445==    at 0x6A398E4: pmix_ptl_base_make_connection (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729445== 
+==3729445== Syscall param setsockopt(optlen) contains uninitialised byte(s)
+==3729445==    at 0x58CAC7E: setsockopt_syscall (setsockopt.c:29)
+==3729445==    by 0x58CAC7E: setsockopt (setsockopt.c:95)
+==3729445==    by 0x6A39BA9: pmix_ptl_base_make_connection (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729445==    by 0x6A40DF3: ??? (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729445==    by 0x69403C1: PMIx_Init (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729445==    by 0x68CFE4A: ext3x_client_init (in /usr/lib/x86_64-linux-gnu/openmpi/lib/openmpi3/mca_pmix_ext3x.so)
+==3729445==    by 0x60B08BF: ??? (in /usr/lib/x86_64-linux-gnu/openmpi/lib/openmpi3/mca_ess_pmi.so)
+==3729445==    by 0x5B5C4CB: orte_init (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729445==    by 0x5422418: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729445==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729445==  Uninitialised value was created by a stack allocation
+==3729445==    at 0x6A398E4: pmix_ptl_base_make_connection (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729445== 
+==3729445== Thread 3:
+==3729445== Syscall param writev(vector[...]) points to uninitialised byte(s)
+==3729445==    at 0x58BDC3D: __writev (writev.c:26)
+==3729445==    by 0x58BDC3D: writev (writev.c:24)
+==3729445==    by 0x6A30885: pmix_ptl_base_send_handler (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729445==    by 0x5BFEFD7: ??? (in /usr/lib/x86_64-linux-gnu/libevent_core-2.1.so.7.0.1)
+==3729445==    by 0x5C00BF6: event_base_loop (in /usr/lib/x86_64-linux-gnu/libevent_core-2.1.so.7.0.1)
+==3729445==    by 0x6988405: ??? (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729445==    by 0x5837B42: start_thread (pthread_create.c:442)
+==3729445==    by 0x58C8BB3: clone (clone.S:100)
+==3729445==  Address 0x8bff3ef is 127 bytes inside a block of size 5,120 alloc'd
+==3729445==    at 0x484DCD3: realloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729445==    by 0x69C377B: pmix_bfrop_buffer_extend (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729445==    by 0x69C4EBD: pmix_bfrops_base_pack_byte (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729445==    by 0x69C1BC8: pmix_bfrops_base_pack_buf (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729445==    by 0x69C4D6E: pmix_bfrops_base_pack (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729445==    by 0x693EF8A: ??? (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729445==    by 0x5BFEEE7: ??? (in /usr/lib/x86_64-linux-gnu/libevent_core-2.1.so.7.0.1)
+==3729445==    by 0x5C00BF6: event_base_loop (in /usr/lib/x86_64-linux-gnu/libevent_core-2.1.so.7.0.1)
+==3729445==    by 0x6988405: ??? (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729445==    by 0x5837B42: start_thread (pthread_create.c:442)
+==3729445==    by 0x58C8BB3: clone (clone.S:100)
+==3729445==  Uninitialised value was created by a stack allocation
+==3729445==    at 0x8A038A6: ??? (in /usr/lib/x86_64-linux-gnu/openmpi/lib/openmpi3/mca_btl_vader.so)
+==3729445== 
+==3729444== Thread 3:
+==3729444== Syscall param writev(vector[...]) points to uninitialised byte(s)
+==3729444==    at 0x58BDC3D: __writev (writev.c:26)
+==3729444==    by 0x58BDC3D: writev (writev.c:24)
+==3729444==    by 0x6A30885: pmix_ptl_base_send_handler (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729444==    by 0x5BFEFD7: ??? (in /usr/lib/x86_64-linux-gnu/libevent_core-2.1.so.7.0.1)
+==3729444==    by 0x5C00BF6: event_base_loop (in /usr/lib/x86_64-linux-gnu/libevent_core-2.1.so.7.0.1)
+==3729444==    by 0x6988405: ??? (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729444==    by 0x5837B42: start_thread (pthread_create.c:442)
+==3729444==    by 0x58C8BB3: clone (clone.S:100)
+==3729444==  Address 0x8bff8df is 127 bytes inside a block of size 5,120 alloc'd
+==3729444==    at 0x484DCD3: realloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729444==    by 0x69C377B: pmix_bfrop_buffer_extend (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729444==    by 0x69C4EBD: pmix_bfrops_base_pack_byte (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729444==    by 0x69C1BC8: pmix_bfrops_base_pack_buf (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729444==    by 0x69C4D6E: pmix_bfrops_base_pack (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729444==    by 0x693EF8A: ??? (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729444==    by 0x5BFEEE7: ??? (in /usr/lib/x86_64-linux-gnu/libevent_core-2.1.so.7.0.1)
+==3729444==    by 0x5C00BF6: event_base_loop (in /usr/lib/x86_64-linux-gnu/libevent_core-2.1.so.7.0.1)
+==3729444==    by 0x6988405: ??? (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729444==    by 0x5837B42: start_thread (pthread_create.c:442)
+==3729444==    by 0x58C8BB3: clone (clone.S:100)
+==3729444==  Uninitialised value was created by a stack allocation
+==3729444==    at 0x8A038A6: ??? (in /usr/lib/x86_64-linux-gnu/openmpi/lib/openmpi3/mca_btl_vader.so)
+==3729444== 
+==3729443== Thread 3:
+==3729443== Syscall param writev(vector[...]) points to uninitialised byte(s)
+==3729443==    at 0x58BDC3D: __writev (writev.c:26)
+==3729443==    by 0x58BDC3D: writev (writev.c:24)
+==3729443==    by 0x6A30885: pmix_ptl_base_send_handler (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729443==    by 0x5BFEFD7: ??? (in /usr/lib/x86_64-linux-gnu/libevent_core-2.1.so.7.0.1)
+==3729443==    by 0x5C00BF6: event_base_loop (in /usr/lib/x86_64-linux-gnu/libevent_core-2.1.so.7.0.1)
+==3729443==    by 0x6988405: ??? (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729443==    by 0x5837B42: start_thread (pthread_create.c:442)
+==3729443==    by 0x58C8BB3: clone (clone.S:100)
+==3729443==  Address 0x8bff8df is 127 bytes inside a block of size 5,120 alloc'd
+==3729443==    at 0x484DCD3: realloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729443==    by 0x69C377B: pmix_bfrop_buffer_extend (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729443==    by 0x69C4EBD: pmix_bfrops_base_pack_byte (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729443==    by 0x69C1BC8: pmix_bfrops_base_pack_buf (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729443==    by 0x69C4D6E: pmix_bfrops_base_pack (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729443==    by 0x693EF8A: ??? (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729443==    by 0x5BFEEE7: ??? (in /usr/lib/x86_64-linux-gnu/libevent_core-2.1.so.7.0.1)
+==3729443==    by 0x5C00BF6: event_base_loop (in /usr/lib/x86_64-linux-gnu/libevent_core-2.1.so.7.0.1)
+==3729443==    by 0x6988405: ??? (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729443==    by 0x5837B42: start_thread (pthread_create.c:442)
+==3729443==    by 0x58C8BB3: clone (clone.S:100)
+==3729443==  Uninitialised value was created by a stack allocation
+==3729443==    at 0x8A038A6: ??? (in /usr/lib/x86_64-linux-gnu/openmpi/lib/openmpi3/mca_btl_vader.so)
+==3729443== 
+==3729442== Thread 3:
+==3729442== Syscall param writev(vector[...]) points to uninitialised byte(s)
+==3729442==    at 0x58BDC3D: __writev (writev.c:26)
+==3729442==    by 0x58BDC3D: writev (writev.c:24)
+==3729442==    by 0x6A30885: pmix_ptl_base_send_handler (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729442==    by 0x5BFEFD7: ??? (in /usr/lib/x86_64-linux-gnu/libevent_core-2.1.so.7.0.1)
+==3729442==    by 0x5C00BF6: event_base_loop (in /usr/lib/x86_64-linux-gnu/libevent_core-2.1.so.7.0.1)
+==3729442==    by 0x6988405: ??? (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729442==    by 0x5837B42: start_thread (pthread_create.c:442)
+==3729442==    by 0x58C8BB3: clone (clone.S:100)
+==3729442==  Address 0x8c0004f is 127 bytes inside a block of size 5,120 alloc'd
+==3729442==    at 0x484DCD3: realloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729442==    by 0x69C377B: pmix_bfrop_buffer_extend (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729442==    by 0x69C4EBD: pmix_bfrops_base_pack_byte (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729442==    by 0x69C1BC8: pmix_bfrops_base_pack_buf (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729442==    by 0x69C4D6E: pmix_bfrops_base_pack (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729442==    by 0x693EF8A: ??? (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729442==    by 0x5BFEEE7: ??? (in /usr/lib/x86_64-linux-gnu/libevent_core-2.1.so.7.0.1)
+==3729442==    by 0x5C00BF6: event_base_loop (in /usr/lib/x86_64-linux-gnu/libevent_core-2.1.so.7.0.1)
+==3729442==    by 0x6988405: ??? (in /usr/lib/x86_64-linux-gnu/pmix2/lib/libpmix.so.2.5.2)
+==3729442==    by 0x5837B42: start_thread (pthread_create.c:442)
+==3729442==    by 0x58C8BB3: clone (clone.S:100)
+==3729442==  Uninitialised value was created by a stack allocation
+==3729442==    at 0x8A038A6: ??? (in /usr/lib/x86_64-linux-gnu/openmpi/lib/openmpi3/mca_btl_vader.so)
+==3729442== 
+==3729442== Thread 1:
+==3729442== Invalid read of size 8
+==3729442==    at 0x485298D: memmove (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729442==    by 0x5A525F5: opal_convertor_pack (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+==3729442==    by 0x53BDC38: PMPI_Pack (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x1304E0: BI_Pack (in /home/henax/scalapack/task1_launch/program.out)
+==3729442==    by 0x12096D: Czgesd2d (in /home/henax/scalapack/task1_launch/program.out)
+==3729442==    by 0x11B74E: TMatrix<std::complex<double> > ScatterMatrix<std::complex<double> >(bool, int, int, int, int, int, int&, int&, int&, int&, TMatrix<std::complex<double> >&) (in /home/henax/scalapack/task1_launch/program.out)
+==3729442==    by 0x114C6C: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729442==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729442==  Address 0x8c534a0 is 0 bytes after a block of size 64 alloc'd
+==3729442==    at 0x484A2F3: operator new[](unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729442==    by 0x11B0AF: TMatrix<std::complex<double> >::TMatrix(int, int, bool) (in /home/henax/scalapack/task1_launch/program.out)
+==3729442==    by 0x114A10: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729442==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729442== 
+==3729445== 
+==3729445== HEAP SUMMARY:
+==3729445==     in use at exit: 21,023 bytes in 65 blocks
+==3729445==   total heap usage: 27,816 allocs, 27,751 frees, 5,161,432 bytes allocated
+==3729445== 
+==3729445== Thread 1:
+==3729445== 1 bytes in 1 blocks are definitely lost in loss record 1 of 53
+==3729445==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729445==    by 0x584B60E: strdup (strdup.c:42)
+==3729445==    by 0x92490F4: ???
+==3729445==    by 0x92387C3: ???
+==3729445==    by 0x5A6E91F: mca_base_framework_components_register (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+==3729445==    by 0x5A6EC95: mca_base_framework_register (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+==3729445==    by 0x5A6ECF3: mca_base_framework_open (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+==3729445==    by 0x5422823: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729445==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729445== 
+==3729445== 9 bytes in 1 blocks are definitely lost in loss record 3 of 53
+==3729445==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729445==    by 0x584B60E: strdup (strdup.c:42)
+==3729445==    by 0x6931D65: ???
+==3729445==    by 0x693233C: ???
+==3729445==    by 0x69327DD: ???
+==3729445==    by 0x699003F: ???
+==3729445==    by 0x69420C7: ???
+==3729445==    by 0x68C9C49: ???
+==3729445==    by 0x60B2FC4: ???
+==3729445==    by 0x5AE9384: orte_finalize (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729445==    by 0x539B308: ompi_mpi_finalize (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x120D9C: Cblacs_exit (in /home/henax/scalapack/task1_launch/program.out)
+==3729445== 
+==3729445== 13 bytes in 1 blocks are definitely lost in loss record 5 of 53
+==3729445==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729445==    by 0x582B1D7: __vasprintf_internal (vasprintf.c:71)
+==3729445==    by 0x58D9362: __asprintf_chk (asprintf_chk.c:34)
+==3729445==    by 0x5A5D322: mca_base_component_to_string (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+==3729445==    by 0x5410EA3: ??? (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x921CB81: ???
+==3729445==    by 0x5422AEE: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729445==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729445== 
+==3729445== 24 bytes in 1 blocks are definitely lost in loss record 8 of 53
+==3729445==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729445==    by 0x582B1D7: __vasprintf_internal (vasprintf.c:71)
+==3729445==    by 0x58D9362: __asprintf_chk (asprintf_chk.c:34)
+==3729445==    by 0x6931D50: ???
+==3729445==    by 0x693233C: ???
+==3729445==    by 0x69327DD: ???
+==3729445==    by 0x699003F: ???
+==3729445==    by 0x69420C7: ???
+==3729445==    by 0x68C9C49: ???
+==3729445==    by 0x60B2FC4: ???
+==3729445==    by 0x5AE9384: orte_finalize (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729445==    by 0x539B308: ompi_mpi_finalize (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445== 
+==3729445== 30 bytes in 1 blocks are definitely lost in loss record 9 of 53
+==3729445==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729445==    by 0x932A4E6: ???
+==3729445==    by 0x932C8F5: ???
+==3729445==    by 0x400647D: call_init.part.0 (dl-init.c:70)
+==3729445==    by 0x4006567: call_init (dl-init.c:33)
+==3729445==    by 0x4006567: _dl_init (dl-init.c:117)
+==3729445==    by 0x5917C84: _dl_catch_exception (dl-error-skeleton.c:182)
+==3729445==    by 0x400DFF5: dl_open_worker (dl-open.c:808)
+==3729445==    by 0x400DFF5: dl_open_worker (dl-open.c:771)
+==3729445==    by 0x5917C27: _dl_catch_exception (dl-error-skeleton.c:208)
+==3729445==    by 0x400E34D: _dl_open (dl-open.c:883)
+==3729445==    by 0x58336BB: dlopen_doit (dlopen.c:56)
+==3729445==    by 0x5917C27: _dl_catch_exception (dl-error-skeleton.c:208)
+==3729445==    by 0x5917CF2: _dl_catch_error (dl-error-skeleton.c:227)
+==3729445== 
+==3729445== 46 bytes in 1 blocks are definitely lost in loss record 14 of 53
+==3729445==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729445==    by 0x584B60E: strdup (strdup.c:42)
+==3729445==    by 0x92B4570: ???
+==3729445==    by 0x400647D: call_init.part.0 (dl-init.c:70)
+==3729445==    by 0x4006567: call_init (dl-init.c:33)
+==3729445==    by 0x4006567: _dl_init (dl-init.c:117)
+==3729445==    by 0x5917C84: _dl_catch_exception (dl-error-skeleton.c:182)
+==3729445==    by 0x400DFF5: dl_open_worker (dl-open.c:808)
+==3729445==    by 0x400DFF5: dl_open_worker (dl-open.c:771)
+==3729445==    by 0x5917C27: _dl_catch_exception (dl-error-skeleton.c:208)
+==3729445==    by 0x400E34D: _dl_open (dl-open.c:883)
+==3729445==    by 0x58336BB: dlopen_doit (dlopen.c:56)
+==3729445==    by 0x5917C27: _dl_catch_exception (dl-error-skeleton.c:208)
+==3729445==    by 0x5917CF2: _dl_catch_error (dl-error-skeleton.c:227)
+==3729445== 
+==3729445== 48 bytes in 1 blocks are definitely lost in loss record 17 of 53
+==3729445==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729445==    by 0x69B383D: ???
+==3729445==    by 0x69B891D: ???
+==3729445==    by 0x69B8EA1: ???
+==3729445==    by 0x69B8EE3: ???
+==3729445==    by 0x698FA70: ???
+==3729445==    by 0x693F63A: ???
+==3729445==    by 0x68CFE4A: ???
+==3729445==    by 0x60B08BF: ???
+==3729445==    by 0x5B5C4CB: orte_init (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729445==    by 0x5422418: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445== 
+==3729445== 49 bytes in 1 blocks are definitely lost in loss record 18 of 53
+==3729445==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729445==    by 0x582B1D7: __vasprintf_internal (vasprintf.c:71)
+==3729445==    by 0x58D9362: __asprintf_chk (asprintf_chk.c:34)
+==3729445==    by 0x6931CDD: ???
+==3729445==    by 0x693233C: ???
+==3729445==    by 0x69327DD: ???
+==3729445==    by 0x699003F: ???
+==3729445==    by 0x69420C7: ???
+==3729445==    by 0x68C9C49: ???
+==3729445==    by 0x60B2FC4: ???
+==3729445==    by 0x5AE9384: orte_finalize (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729445==    by 0x539B308: ompi_mpi_finalize (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445== 
+==3729445== 49 bytes in 1 blocks are definitely lost in loss record 19 of 53
+==3729445==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729445==    by 0x584B60E: strdup (strdup.c:42)
+==3729445==    by 0x6931F23: ???
+==3729445==    by 0x6931D78: ???
+==3729445==    by 0x693233C: ???
+==3729445==    by 0x69327DD: ???
+==3729445==    by 0x699003F: ???
+==3729445==    by 0x69420C7: ???
+==3729445==    by 0x68C9C49: ???
+==3729445==    by 0x60B2FC4: ???
+==3729445==    by 0x5AE9384: orte_finalize (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729445==    by 0x539B308: ompi_mpi_finalize (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445== 
+==3729445== 64 bytes in 1 blocks are definitely lost in loss record 22 of 53
+==3729445==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729445==    by 0x6A2B323: ???
+==3729445==    by 0x698FA87: ???
+==3729445==    by 0x693F63A: ???
+==3729445==    by 0x68CFE4A: ???
+==3729445==    by 0x60B08BF: ???
+==3729445==    by 0x5B5C4CB: orte_init (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729445==    by 0x5422418: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729445==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729445== 
+==3729445== 79 (64 direct, 15 indirect) bytes in 1 blocks are definitely lost in loss record 25 of 53
+==3729445==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729445==    by 0x89CF2AA: ???
+==3729445==    by 0x5A63A9E: mca_base_framework_components_open (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+==3729445==    by 0x5A93745: ??? (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+==3729445==    by 0x5A6ED68: mca_base_framework_open (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+==3729445==    by 0x54227C4: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729445==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729445== 
+==3729445== 128 bytes in 1 blocks are definitely lost in loss record 28 of 53
+==3729445==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729445==    by 0x69A70F1: ???
+==3729445==    by 0x69A70B0: ???
+==3729445==    by 0x693F940: ???
+==3729445==    by 0x68CFE4A: ???
+==3729445==    by 0x60B08BF: ???
+==3729445==    by 0x5B5C4CB: orte_init (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729445==    by 0x5422418: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729445==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729445== 
+==3729445== 128 bytes in 1 blocks are definitely lost in loss record 29 of 53
+==3729445==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729445==    by 0x69A70F1: ???
+==3729445==    by 0x69A70B0: ???
+==3729445==    by 0x693FA40: ???
+==3729445==    by 0x68CFE4A: ???
+==3729445==    by 0x60B08BF: ???
+==3729445==    by 0x5B5C4CB: orte_init (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729445==    by 0x5422418: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729445==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729445== 
+==3729445== 260 bytes in 1 blocks are definitely lost in loss record 30 of 53
+==3729445==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729445==    by 0x698F226: ???
+==3729445==    by 0x693F63A: ???
+==3729445==    by 0x68CFE4A: ???
+==3729445==    by 0x60B08BF: ???
+==3729445==    by 0x5B5C4CB: orte_init (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729445==    by 0x5422418: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729445==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729445== 
+==3729445== 384 bytes in 3 blocks are definitely lost in loss record 31 of 53
+==3729445==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729445==    by 0x89F315B: ???
+==3729445==    by 0x89F39FF: ???
+==3729445==    by 0x89D6A22: ???
+==3729445==    by 0x921CB9B: ???
+==3729445==    by 0x5422AEE: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729445==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729445== 
+==3729445== 384 bytes in 3 blocks are definitely lost in loss record 32 of 53
+==3729445==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729445==    by 0x89F2A30: ???
+==3729445==    by 0x89F39FF: ???
+==3729445==    by 0x89D6A22: ???
+==3729445==    by 0x921CB9B: ???
+==3729445==    by 0x5422AEE: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729445==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729445== 
+==3729445== 552 bytes in 1 blocks are definitely lost in loss record 33 of 53
+==3729445==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729445==    by 0x6947C13: ???
+==3729445==    by 0x694822C: ???
+==3729445==    by 0x68D14B7: ???
+==3729445==    by 0x60B0FB5: ???
+==3729445==    by 0x5B5C4CB: orte_init (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729445==    by 0x5422418: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729445==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729445== 
+==3729445== 552 bytes in 1 blocks are definitely lost in loss record 34 of 53
+==3729445==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729445==    by 0x6947C13: ???
+==3729445==    by 0x694822C: ???
+==3729445==    by 0x68D14B7: ???
+==3729445==    by 0x60B14D5: ???
+==3729445==    by 0x5B5C4CB: orte_init (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729445==    by 0x5422418: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729445==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729445== 
+==3729445== 552 bytes in 1 blocks are definitely lost in loss record 35 of 53
+==3729445==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729445==    by 0x6947C13: ???
+==3729445==    by 0x694822C: ???
+==3729445==    by 0x68D14B7: ???
+==3729445==    by 0x538815A: ompi_proc_complete_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x5422A97: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729445==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729445== 
+==3729445== 688 bytes in 1 blocks are definitely lost in loss record 37 of 53
+==3729445==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729445==    by 0x5411BC6: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x5389F63: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729445==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729445== 
+==3729445== 688 bytes in 1 blocks are definitely lost in loss record 38 of 53
+==3729445==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729445==    by 0x89894FB: ???
+==3729445==    by 0x5411EBE: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x5389F63: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729445==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729445== 
+==3729445== 688 bytes in 1 blocks are definitely lost in loss record 39 of 53
+==3729445==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729445==    by 0x5411BC6: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x538A02A: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729445==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729445== 
+==3729445== 688 bytes in 1 blocks are definitely lost in loss record 40 of 53
+==3729445==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729445==    by 0x89894FB: ???
+==3729445==    by 0x5411EBE: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x538A02A: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729445==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729445== 
+==3729445== 688 bytes in 1 blocks are definitely lost in loss record 41 of 53
+==3729445==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729445==    by 0x5411BC6: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x538A0D6: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729445==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729445== 
+==3729445== 688 bytes in 1 blocks are definitely lost in loss record 42 of 53
+==3729445==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729445==    by 0x89894FB: ???
+==3729445==    by 0x5411EBE: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x538A0D6: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729445==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729445== 
+==3729445== 688 bytes in 1 blocks are definitely lost in loss record 43 of 53
+==3729445==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729445==    by 0x5411BC6: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x538A184: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729445==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729445== 
+==3729445== 688 bytes in 1 blocks are definitely lost in loss record 44 of 53
+==3729445==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729445==    by 0x89894FB: ???
+==3729445==    by 0x5411EBE: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x538A184: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729445==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729445== 
+==3729445== 688 bytes in 1 blocks are definitely lost in loss record 45 of 53
+==3729445==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729445==    by 0x5411BC6: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x538A2E6: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729445==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729445== 
+==3729445== 688 bytes in 1 blocks are definitely lost in loss record 46 of 53
+==3729445==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729445==    by 0x89894FB: ???
+==3729445==    by 0x5411EBE: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x538A2E6: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729445==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729445== 
+==3729445== 688 bytes in 1 blocks are definitely lost in loss record 47 of 53
+==3729445==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729445==    by 0x5411BC6: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x538A446: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729445==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729445== 
+==3729445== 688 bytes in 1 blocks are definitely lost in loss record 48 of 53
+==3729445==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729445==    by 0x89894FB: ???
+==3729445==    by 0x5411EBE: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x538A446: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729445==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729445== 
+==3729445== 688 bytes in 1 blocks are definitely lost in loss record 49 of 53
+==3729445==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729445==    by 0x5411BC6: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x538A5A4: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729445==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729445== 
+==3729445== 688 bytes in 1 blocks are definitely lost in loss record 50 of 53
+==3729445==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729445==    by 0x89894FB: ???
+==3729445==    by 0x5411EBE: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x538A5A4: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729445==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729445== 
+==3729445== 3,312 bytes in 3 blocks are definitely lost in loss record 53 of 53
+==3729445==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729445==    by 0x6947C13: ???
+==3729445==    by 0x694822C: ???
+==3729445==    by 0x68D1637: ???
+==3729445==    by 0x5385AAE: ompi_proc_complete_init_single (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x5388259: ompi_proc_complete_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x5422A97: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729445==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729445==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729445== 
+==3729445== LEAK SUMMARY:
+==3729445==    definitely lost: 16,281 bytes in 40 blocks
+==3729445==    indirectly lost: 15 bytes in 1 blocks
+==3729445==      possibly lost: 0 bytes in 0 blocks
+==3729445==    still reachable: 4,727 bytes in 24 blocks
+==3729445==         suppressed: 0 bytes in 0 blocks
+==3729445== Reachable blocks (those to which a pointer was found) are not shown.
+==3729445== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==3729445== 
+==3729445== For lists of detected and suppressed errors, rerun with: -s
+==3729445== ERROR SUMMARY: 38 errors from 38 contexts (suppressed: 0 from 0)
+==3729442== 
+==3729442== HEAP SUMMARY:
+==3729442==     in use at exit: 21,010 bytes in 64 blocks
+==3729442==   total heap usage: 28,776 allocs, 28,712 frees, 5,394,599 bytes allocated
+==3729442== 
+==3729442== 1 bytes in 1 blocks are definitely lost in loss record 1 of 52
+==3729442==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729442==    by 0x584B60E: strdup (strdup.c:42)
+==3729442==    by 0x92490F4: ???
+==3729442==    by 0x92387C3: ???
+==3729442==    by 0x5A6E91F: mca_base_framework_components_register (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+==3729442==    by 0x5A6EC95: mca_base_framework_register (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+==3729442==    by 0x5A6ECF3: mca_base_framework_open (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+==3729442==    by 0x5422823: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729442==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729442== 
+==3729442== 9 bytes in 1 blocks are definitely lost in loss record 3 of 52
+==3729442==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729442==    by 0x584B60E: strdup (strdup.c:42)
+==3729442==    by 0x6931D65: ???
+==3729442==    by 0x693233C: ???
+==3729442==    by 0x69327DD: ???
+==3729442==    by 0x699003F: ???
+==3729442==    by 0x69420C7: ???
+==3729442==    by 0x68C9C49: ???
+==3729442==    by 0x60B2FC4: ???
+==3729442==    by 0x5AE9384: orte_finalize (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729442==    by 0x539B308: ompi_mpi_finalize (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x120D9C: Cblacs_exit (in /home/henax/scalapack/task1_launch/program.out)
+==3729442== 
+==3729442== 24 bytes in 1 blocks are definitely lost in loss record 7 of 52
+==3729442==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729442==    by 0x582B1D7: __vasprintf_internal (vasprintf.c:71)
+==3729442==    by 0x58D9362: __asprintf_chk (asprintf_chk.c:34)
+==3729442==    by 0x6931D50: ???
+==3729442==    by 0x693233C: ???
+==3729442==    by 0x69327DD: ???
+==3729442==    by 0x699003F: ???
+==3729442==    by 0x69420C7: ???
+==3729442==    by 0x68C9C49: ???
+==3729442==    by 0x60B2FC4: ???
+==3729442==    by 0x5AE9384: orte_finalize (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729442==    by 0x539B308: ompi_mpi_finalize (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442== 
+==3729442== 30 bytes in 1 blocks are definitely lost in loss record 8 of 52
+==3729442==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729442==    by 0x932A4E6: ???
+==3729442==    by 0x932C8F5: ???
+==3729442==    by 0x400647D: call_init.part.0 (dl-init.c:70)
+==3729442==    by 0x4006567: call_init (dl-init.c:33)
+==3729442==    by 0x4006567: _dl_init (dl-init.c:117)
+==3729442==    by 0x5917C84: _dl_catch_exception (dl-error-skeleton.c:182)
+==3729442==    by 0x400DFF5: dl_open_worker (dl-open.c:808)
+==3729442==    by 0x400DFF5: dl_open_worker (dl-open.c:771)
+==3729442==    by 0x5917C27: _dl_catch_exception (dl-error-skeleton.c:208)
+==3729442==    by 0x400E34D: _dl_open (dl-open.c:883)
+==3729442==    by 0x58336BB: dlopen_doit (dlopen.c:56)
+==3729442==    by 0x5917C27: _dl_catch_exception (dl-error-skeleton.c:208)
+==3729442==    by 0x5917CF2: _dl_catch_error (dl-error-skeleton.c:227)
+==3729442== 
+==3729442== 46 bytes in 1 blocks are definitely lost in loss record 13 of 52
+==3729442==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729442==    by 0x584B60E: strdup (strdup.c:42)
+==3729442==    by 0x92B4570: ???
+==3729442==    by 0x400647D: call_init.part.0 (dl-init.c:70)
+==3729442==    by 0x4006567: call_init (dl-init.c:33)
+==3729442==    by 0x4006567: _dl_init (dl-init.c:117)
+==3729442==    by 0x5917C84: _dl_catch_exception (dl-error-skeleton.c:182)
+==3729442==    by 0x400DFF5: dl_open_worker (dl-open.c:808)
+==3729442==    by 0x400DFF5: dl_open_worker (dl-open.c:771)
+==3729442==    by 0x5917C27: _dl_catch_exception (dl-error-skeleton.c:208)
+==3729442==    by 0x400E34D: _dl_open (dl-open.c:883)
+==3729442==    by 0x58336BB: dlopen_doit (dlopen.c:56)
+==3729442==    by 0x5917C27: _dl_catch_exception (dl-error-skeleton.c:208)
+==3729442==    by 0x5917CF2: _dl_catch_error (dl-error-skeleton.c:227)
+==3729442== 
+==3729442== 48 bytes in 1 blocks are definitely lost in loss record 16 of 52
+==3729442==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729442==    by 0x69B383D: ???
+==3729442==    by 0x69B891D: ???
+==3729442==    by 0x69B8EA1: ???
+==3729442==    by 0x69B8EE3: ???
+==3729442==    by 0x698FA70: ???
+==3729442==    by 0x693F63A: ???
+==3729442==    by 0x68CFE4A: ???
+==3729442==    by 0x60B08BF: ???
+==3729442==    by 0x5B5C4CB: orte_init (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729442==    by 0x5422418: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442== 
+==3729442== 49 bytes in 1 blocks are definitely lost in loss record 17 of 52
+==3729442==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729442==    by 0x582B1D7: __vasprintf_internal (vasprintf.c:71)
+==3729442==    by 0x58D9362: __asprintf_chk (asprintf_chk.c:34)
+==3729442==    by 0x6931CDD: ???
+==3729442==    by 0x693233C: ???
+==3729442==    by 0x69327DD: ???
+==3729442==    by 0x699003F: ???
+==3729442==    by 0x69420C7: ???
+==3729442==    by 0x68C9C49: ???
+==3729442==    by 0x60B2FC4: ???
+==3729442==    by 0x5AE9384: orte_finalize (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729442==    by 0x539B308: ompi_mpi_finalize (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442== 
+==3729442== 49 bytes in 1 blocks are definitely lost in loss record 18 of 52
+==3729442==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729442==    by 0x584B60E: strdup (strdup.c:42)
+==3729442==    by 0x6931F23: ???
+==3729442==    by 0x6931D78: ???
+==3729442==    by 0x693233C: ???
+==3729442==    by 0x69327DD: ???
+==3729442==    by 0x699003F: ???
+==3729442==    by 0x69420C7: ???
+==3729442==    by 0x68C9C49: ???
+==3729442==    by 0x60B2FC4: ???
+==3729442==    by 0x5AE9384: orte_finalize (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729442==    by 0x539B308: ompi_mpi_finalize (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442== 
+==3729442== 64 bytes in 1 blocks are definitely lost in loss record 21 of 52
+==3729442==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729442==    by 0x6A2B323: ???
+==3729442==    by 0x698FA87: ???
+==3729442==    by 0x693F63A: ???
+==3729442==    by 0x68CFE4A: ???
+==3729442==    by 0x60B08BF: ???
+==3729442==    by 0x5B5C4CB: orte_init (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729442==    by 0x5422418: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729442==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729442== 
+==3729442== 79 (64 direct, 15 indirect) bytes in 1 blocks are definitely lost in loss record 24 of 52
+==3729442==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729442==    by 0x89CF2AA: ???
+==3729442==    by 0x5A63A9E: mca_base_framework_components_open (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+==3729442==    by 0x5A93745: ??? (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+==3729442==    by 0x5A6ED68: mca_base_framework_open (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+==3729442==    by 0x54227C4: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729442==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729442== 
+==3729442== 128 bytes in 1 blocks are definitely lost in loss record 27 of 52
+==3729442==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729442==    by 0x69A70F1: ???
+==3729442==    by 0x69A70B0: ???
+==3729442==    by 0x693F940: ???
+==3729442==    by 0x68CFE4A: ???
+==3729442==    by 0x60B08BF: ???
+==3729442==    by 0x5B5C4CB: orte_init (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729442==    by 0x5422418: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729442==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729442== 
+==3729442== 128 bytes in 1 blocks are definitely lost in loss record 28 of 52
+==3729442==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729442==    by 0x69A70F1: ???
+==3729442==    by 0x69A70B0: ???
+==3729442==    by 0x693FA40: ???
+==3729442==    by 0x68CFE4A: ???
+==3729442==    by 0x60B08BF: ???
+==3729442==    by 0x5B5C4CB: orte_init (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729442==    by 0x5422418: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729442==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729442== 
+==3729442== 260 bytes in 1 blocks are definitely lost in loss record 29 of 52
+==3729442==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729442==    by 0x698F226: ???
+==3729442==    by 0x693F63A: ???
+==3729442==    by 0x68CFE4A: ???
+==3729442==    by 0x60B08BF: ???
+==3729442==    by 0x5B5C4CB: orte_init (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729442==    by 0x5422418: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729442==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729442== 
+==3729442== 384 bytes in 3 blocks are definitely lost in loss record 30 of 52
+==3729442==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729442==    by 0x89F315B: ???
+==3729442==    by 0x89F39FF: ???
+==3729442==    by 0x89D6A22: ???
+==3729442==    by 0x921CB9B: ???
+==3729442==    by 0x5422AEE: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729442==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729442== 
+==3729442== 384 bytes in 3 blocks are definitely lost in loss record 31 of 52
+==3729442==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729442==    by 0x89F2A30: ???
+==3729442==    by 0x89F39FF: ???
+==3729442==    by 0x89D6A22: ???
+==3729442==    by 0x921CB9B: ???
+==3729442==    by 0x5422AEE: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729442==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729442== 
+==3729442== 552 bytes in 1 blocks are definitely lost in loss record 32 of 52
+==3729442==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729442==    by 0x6947C13: ???
+==3729442==    by 0x694822C: ???
+==3729442==    by 0x68D14B7: ???
+==3729442==    by 0x60B0FB5: ???
+==3729442==    by 0x5B5C4CB: orte_init (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729442==    by 0x5422418: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729442==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729442== 
+==3729442== 552 bytes in 1 blocks are definitely lost in loss record 33 of 52
+==3729442==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729442==    by 0x6947C13: ???
+==3729442==    by 0x694822C: ???
+==3729442==    by 0x68D14B7: ???
+==3729442==    by 0x60B14D5: ???
+==3729442==    by 0x5B5C4CB: orte_init (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729442==    by 0x5422418: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729442==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729442== 
+==3729442== 552 bytes in 1 blocks are definitely lost in loss record 34 of 52
+==3729442==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729442==    by 0x6947C13: ???
+==3729442==    by 0x694822C: ???
+==3729442==    by 0x68D14B7: ???
+==3729442==    by 0x538815A: ompi_proc_complete_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x5422A97: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729442==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729442== 
+==3729442== 688 bytes in 1 blocks are definitely lost in loss record 36 of 52
+==3729442==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729442==    by 0x5411BC6: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x5389F63: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729442==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729442== 
+==3729442== 688 bytes in 1 blocks are definitely lost in loss record 37 of 52
+==3729442==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729442==    by 0x89894FB: ???
+==3729442==    by 0x5411EBE: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x5389F63: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729442==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729442== 
+==3729442== 688 bytes in 1 blocks are definitely lost in loss record 38 of 52
+==3729442==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729442==    by 0x5411BC6: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x538A02A: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729442==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729442== 
+==3729442== 688 bytes in 1 blocks are definitely lost in loss record 39 of 52
+==3729442==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729442==    by 0x89894FB: ???
+==3729442==    by 0x5411EBE: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x538A02A: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729442==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729442== 
+==3729442== 688 bytes in 1 blocks are definitely lost in loss record 40 of 52
+==3729442==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729442==    by 0x5411BC6: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x538A0D6: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729442==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729442== 
+==3729442== 688 bytes in 1 blocks are definitely lost in loss record 41 of 52
+==3729442==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729442==    by 0x89894FB: ???
+==3729442==    by 0x5411EBE: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x538A0D6: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729442==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729442== 
+==3729442== 688 bytes in 1 blocks are definitely lost in loss record 42 of 52
+==3729442==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729442==    by 0x5411BC6: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x538A184: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729442==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729442== 
+==3729442== 688 bytes in 1 blocks are definitely lost in loss record 43 of 52
+==3729442==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729442==    by 0x89894FB: ???
+==3729442==    by 0x5411EBE: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x538A184: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729442==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729442== 
+==3729442== 688 bytes in 1 blocks are definitely lost in loss record 44 of 52
+==3729442==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729442==    by 0x5411BC6: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x538A2E6: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729442==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729442== 
+==3729442== 688 bytes in 1 blocks are definitely lost in loss record 45 of 52
+==3729442==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729442==    by 0x89894FB: ???
+==3729442==    by 0x5411EBE: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x538A2E6: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729442==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729442== 
+==3729442== 688 bytes in 1 blocks are definitely lost in loss record 46 of 52
+==3729442==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729442==    by 0x5411BC6: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x538A446: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729442==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729442== 
+==3729442== 688 bytes in 1 blocks are definitely lost in loss record 47 of 52
+==3729442==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729442==    by 0x89894FB: ???
+==3729442==    by 0x5411EBE: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x538A446: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729442==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729442== 
+==3729442== 688 bytes in 1 blocks are definitely lost in loss record 48 of 52
+==3729442==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729442==    by 0x5411BC6: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x538A5A4: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729442==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729442== 
+==3729442== 688 bytes in 1 blocks are definitely lost in loss record 49 of 52
+==3729442==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729442==    by 0x89894FB: ???
+==3729442==    by 0x5411EBE: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x538A5A4: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729442==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729442== 
+==3729442== 3,312 bytes in 3 blocks are definitely lost in loss record 52 of 52
+==3729442==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729442==    by 0x6947C13: ???
+==3729442==    by 0x694822C: ???
+==3729442==    by 0x68D1637: ???
+==3729442==    by 0x5385AAE: ompi_proc_complete_init_single (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x5388259: ompi_proc_complete_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x5422A97: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729442==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729442==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729442== 
+==3729442== LEAK SUMMARY:
+==3729442==    definitely lost: 16,268 bytes in 39 blocks
+==3729442==    indirectly lost: 15 bytes in 1 blocks
+==3729442==      possibly lost: 0 bytes in 0 blocks
+==3729442==    still reachable: 4,727 bytes in 24 blocks
+==3729442==         suppressed: 0 bytes in 0 blocks
+==3729442== Reachable blocks (those to which a pointer was found) are not shown.
+==3729442== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==3729442== 
+==3729442== For lists of detected and suppressed errors, rerun with: -s
+==3729442== ERROR SUMMARY: 45 errors from 38 contexts (suppressed: 0 from 0)
+==3729443== 
+==3729443== HEAP SUMMARY:
+==3729443==     in use at exit: 21,023 bytes in 65 blocks
+==3729443==   total heap usage: 28,045 allocs, 27,980 frees, 5,184,793 bytes allocated
+==3729443== 
+==3729443== Thread 1:
+==3729443== 1 bytes in 1 blocks are definitely lost in loss record 1 of 53
+==3729443==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729443==    by 0x584B60E: strdup (strdup.c:42)
+==3729443==    by 0x92490F4: ???
+==3729443==    by 0x92387C3: ???
+==3729443==    by 0x5A6E91F: mca_base_framework_components_register (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+==3729443==    by 0x5A6EC95: mca_base_framework_register (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+==3729443==    by 0x5A6ECF3: mca_base_framework_open (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+==3729443==    by 0x5422823: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729443==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729443== 
+==3729443== 9 bytes in 1 blocks are definitely lost in loss record 3 of 53
+==3729443==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729443==    by 0x584B60E: strdup (strdup.c:42)
+==3729443==    by 0x6931D65: ???
+==3729443==    by 0x693233C: ???
+==3729443==    by 0x69327DD: ???
+==3729443==    by 0x699003F: ???
+==3729443==    by 0x69420C7: ???
+==3729443==    by 0x68C9C49: ???
+==3729443==    by 0x60B2FC4: ???
+==3729443==    by 0x5AE9384: orte_finalize (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729443==    by 0x539B308: ompi_mpi_finalize (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x120D9C: Cblacs_exit (in /home/henax/scalapack/task1_launch/program.out)
+==3729443== 
+==3729443== 13 bytes in 1 blocks are definitely lost in loss record 5 of 53
+==3729443==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729443==    by 0x582B1D7: __vasprintf_internal (vasprintf.c:71)
+==3729443==    by 0x58D9362: __asprintf_chk (asprintf_chk.c:34)
+==3729443==    by 0x5A5D322: mca_base_component_to_string (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+==3729443==    by 0x5410EA3: ??? (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x921CB81: ???
+==3729443==    by 0x5422AEE: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729443==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729443== 
+==3729443== 24 bytes in 1 blocks are definitely lost in loss record 8 of 53
+==3729443==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729443==    by 0x582B1D7: __vasprintf_internal (vasprintf.c:71)
+==3729443==    by 0x58D9362: __asprintf_chk (asprintf_chk.c:34)
+==3729443==    by 0x6931D50: ???
+==3729443==    by 0x693233C: ???
+==3729443==    by 0x69327DD: ???
+==3729443==    by 0x699003F: ???
+==3729443==    by 0x69420C7: ???
+==3729443==    by 0x68C9C49: ???
+==3729443==    by 0x60B2FC4: ???
+==3729443==    by 0x5AE9384: orte_finalize (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729443==    by 0x539B308: ompi_mpi_finalize (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443== 
+==3729443== 30 bytes in 1 blocks are definitely lost in loss record 9 of 53
+==3729443==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729443==    by 0x932A4E6: ???
+==3729443==    by 0x932C8F5: ???
+==3729443==    by 0x400647D: call_init.part.0 (dl-init.c:70)
+==3729443==    by 0x4006567: call_init (dl-init.c:33)
+==3729443==    by 0x4006567: _dl_init (dl-init.c:117)
+==3729443==    by 0x5917C84: _dl_catch_exception (dl-error-skeleton.c:182)
+==3729443==    by 0x400DFF5: dl_open_worker (dl-open.c:808)
+==3729443==    by 0x400DFF5: dl_open_worker (dl-open.c:771)
+==3729443==    by 0x5917C27: _dl_catch_exception (dl-error-skeleton.c:208)
+==3729443==    by 0x400E34D: _dl_open (dl-open.c:883)
+==3729443==    by 0x58336BB: dlopen_doit (dlopen.c:56)
+==3729443==    by 0x5917C27: _dl_catch_exception (dl-error-skeleton.c:208)
+==3729443==    by 0x5917CF2: _dl_catch_error (dl-error-skeleton.c:227)
+==3729443== 
+==3729443== 46 bytes in 1 blocks are definitely lost in loss record 14 of 53
+==3729443==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729443==    by 0x584B60E: strdup (strdup.c:42)
+==3729443==    by 0x92B4570: ???
+==3729443==    by 0x400647D: call_init.part.0 (dl-init.c:70)
+==3729443==    by 0x4006567: call_init (dl-init.c:33)
+==3729443==    by 0x4006567: _dl_init (dl-init.c:117)
+==3729443==    by 0x5917C84: _dl_catch_exception (dl-error-skeleton.c:182)
+==3729443==    by 0x400DFF5: dl_open_worker (dl-open.c:808)
+==3729443==    by 0x400DFF5: dl_open_worker (dl-open.c:771)
+==3729443==    by 0x5917C27: _dl_catch_exception (dl-error-skeleton.c:208)
+==3729443==    by 0x400E34D: _dl_open (dl-open.c:883)
+==3729443==    by 0x58336BB: dlopen_doit (dlopen.c:56)
+==3729443==    by 0x5917C27: _dl_catch_exception (dl-error-skeleton.c:208)
+==3729443==    by 0x5917CF2: _dl_catch_error (dl-error-skeleton.c:227)
+==3729443== 
+==3729443== 48 bytes in 1 blocks are definitely lost in loss record 17 of 53
+==3729443==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729443==    by 0x69B383D: ???
+==3729443==    by 0x69B891D: ???
+==3729443==    by 0x69B8EA1: ???
+==3729443==    by 0x69B8EE3: ???
+==3729443==    by 0x698FA70: ???
+==3729443==    by 0x693F63A: ???
+==3729443==    by 0x68CFE4A: ???
+==3729443==    by 0x60B08BF: ???
+==3729443==    by 0x5B5C4CB: orte_init (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729443==    by 0x5422418: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443== 
+==3729443== 49 bytes in 1 blocks are definitely lost in loss record 18 of 53
+==3729443==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729443==    by 0x582B1D7: __vasprintf_internal (vasprintf.c:71)
+==3729443==    by 0x58D9362: __asprintf_chk (asprintf_chk.c:34)
+==3729443==    by 0x6931CDD: ???
+==3729443==    by 0x693233C: ???
+==3729443==    by 0x69327DD: ???
+==3729443==    by 0x699003F: ???
+==3729443==    by 0x69420C7: ???
+==3729443==    by 0x68C9C49: ???
+==3729443==    by 0x60B2FC4: ???
+==3729443==    by 0x5AE9384: orte_finalize (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729443==    by 0x539B308: ompi_mpi_finalize (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443== 
+==3729443== 49 bytes in 1 blocks are definitely lost in loss record 19 of 53
+==3729443==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729443==    by 0x584B60E: strdup (strdup.c:42)
+==3729443==    by 0x6931F23: ???
+==3729443==    by 0x6931D78: ???
+==3729443==    by 0x693233C: ???
+==3729443==    by 0x69327DD: ???
+==3729443==    by 0x699003F: ???
+==3729443==    by 0x69420C7: ???
+==3729443==    by 0x68C9C49: ???
+==3729443==    by 0x60B2FC4: ???
+==3729443==    by 0x5AE9384: orte_finalize (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729443==    by 0x539B308: ompi_mpi_finalize (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443== 
+==3729443== 64 bytes in 1 blocks are definitely lost in loss record 22 of 53
+==3729443==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729443==    by 0x6A2B323: ???
+==3729443==    by 0x698FA87: ???
+==3729443==    by 0x693F63A: ???
+==3729443==    by 0x68CFE4A: ???
+==3729443==    by 0x60B08BF: ???
+==3729443==    by 0x5B5C4CB: orte_init (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729443==    by 0x5422418: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729443==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729443== 
+==3729443== 79 (64 direct, 15 indirect) bytes in 1 blocks are definitely lost in loss record 25 of 53
+==3729443==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729443==    by 0x89CF2AA: ???
+==3729443==    by 0x5A63A9E: mca_base_framework_components_open (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+==3729443==    by 0x5A93745: ??? (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+==3729443==    by 0x5A6ED68: mca_base_framework_open (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+==3729443==    by 0x54227C4: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729443==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729443== 
+==3729443== 128 bytes in 1 blocks are definitely lost in loss record 28 of 53
+==3729443==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729443==    by 0x69A70F1: ???
+==3729443==    by 0x69A70B0: ???
+==3729443==    by 0x693F940: ???
+==3729443==    by 0x68CFE4A: ???
+==3729443==    by 0x60B08BF: ???
+==3729443==    by 0x5B5C4CB: orte_init (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729443==    by 0x5422418: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729443==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729443== 
+==3729443== 128 bytes in 1 blocks are definitely lost in loss record 29 of 53
+==3729443==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729443==    by 0x69A70F1: ???
+==3729443==    by 0x69A70B0: ???
+==3729443==    by 0x693FA40: ???
+==3729443==    by 0x68CFE4A: ???
+==3729443==    by 0x60B08BF: ???
+==3729443==    by 0x5B5C4CB: orte_init (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729443==    by 0x5422418: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729443==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729443== 
+==3729443== 260 bytes in 1 blocks are definitely lost in loss record 30 of 53
+==3729443==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729443==    by 0x698F226: ???
+==3729443==    by 0x693F63A: ???
+==3729443==    by 0x68CFE4A: ???
+==3729443==    by 0x60B08BF: ???
+==3729443==    by 0x5B5C4CB: orte_init (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729443==    by 0x5422418: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729443==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729443== 
+==3729443== 384 bytes in 3 blocks are definitely lost in loss record 31 of 53
+==3729443==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729443==    by 0x89F315B: ???
+==3729443==    by 0x89F39FF: ???
+==3729443==    by 0x89D6A22: ???
+==3729443==    by 0x921CB9B: ???
+==3729443==    by 0x5422AEE: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729443==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729443== 
+==3729443== 384 bytes in 3 blocks are definitely lost in loss record 32 of 53
+==3729443==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729443==    by 0x89F2A30: ???
+==3729443==    by 0x89F39FF: ???
+==3729443==    by 0x89D6A22: ???
+==3729443==    by 0x921CB9B: ???
+==3729443==    by 0x5422AEE: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729443==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729443== 
+==3729443== 552 bytes in 1 blocks are definitely lost in loss record 33 of 53
+==3729443==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729443==    by 0x6947C13: ???
+==3729443==    by 0x694822C: ???
+==3729443==    by 0x68D14B7: ???
+==3729443==    by 0x60B0FB5: ???
+==3729443==    by 0x5B5C4CB: orte_init (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729443==    by 0x5422418: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729443==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729443== 
+==3729443== 552 bytes in 1 blocks are definitely lost in loss record 34 of 53
+==3729443==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729443==    by 0x6947C13: ???
+==3729443==    by 0x694822C: ???
+==3729443==    by 0x68D14B7: ???
+==3729443==    by 0x60B14D5: ???
+==3729443==    by 0x5B5C4CB: orte_init (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729443==    by 0x5422418: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729443==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729443== 
+==3729443== 552 bytes in 1 blocks are definitely lost in loss record 35 of 53
+==3729443==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729443==    by 0x6947C13: ???
+==3729443==    by 0x694822C: ???
+==3729443==    by 0x68D14B7: ???
+==3729443==    by 0x538815A: ompi_proc_complete_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x5422A97: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729443==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729443== 
+==3729443== 688 bytes in 1 blocks are definitely lost in loss record 37 of 53
+==3729443==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729443==    by 0x5411BC6: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x5389F63: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729443==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729443== 
+==3729443== 688 bytes in 1 blocks are definitely lost in loss record 38 of 53
+==3729443==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729443==    by 0x89894FB: ???
+==3729443==    by 0x5411EBE: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x5389F63: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729443==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729443== 
+==3729443== 688 bytes in 1 blocks are definitely lost in loss record 39 of 53
+==3729443==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729443==    by 0x5411BC6: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x538A02A: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729443==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729443== 
+==3729443== 688 bytes in 1 blocks are definitely lost in loss record 40 of 53
+==3729443==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729443==    by 0x89894FB: ???
+==3729443==    by 0x5411EBE: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x538A02A: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729443==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729443== 
+==3729443== 688 bytes in 1 blocks are definitely lost in loss record 41 of 53
+==3729443==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729443==    by 0x5411BC6: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x538A0D6: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729443==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729443== 
+==3729443== 688 bytes in 1 blocks are definitely lost in loss record 42 of 53
+==3729443==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729443==    by 0x89894FB: ???
+==3729443==    by 0x5411EBE: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x538A0D6: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729443==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729443== 
+==3729443== 688 bytes in 1 blocks are definitely lost in loss record 43 of 53
+==3729443==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729443==    by 0x5411BC6: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x538A184: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729443==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729443== 
+==3729443== 688 bytes in 1 blocks are definitely lost in loss record 44 of 53
+==3729443==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729443==    by 0x89894FB: ???
+==3729443==    by 0x5411EBE: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x538A184: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729443==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729443== 
+==3729443== 688 bytes in 1 blocks are definitely lost in loss record 45 of 53
+==3729443==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729443==    by 0x5411BC6: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x538A2E6: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729443==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729443== 
+==3729443== 688 bytes in 1 blocks are definitely lost in loss record 46 of 53
+==3729443==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729443==    by 0x89894FB: ???
+==3729443==    by 0x5411EBE: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x538A2E6: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729443==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729443== 
+==3729443== 688 bytes in 1 blocks are definitely lost in loss record 47 of 53
+==3729443==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729443==    by 0x5411BC6: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x538A446: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729443==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729443== 
+==3729443== 688 bytes in 1 blocks are definitely lost in loss record 48 of 53
+==3729443==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729443==    by 0x89894FB: ???
+==3729443==    by 0x5411EBE: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x538A446: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729443==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729443== 
+==3729443== 688 bytes in 1 blocks are definitely lost in loss record 49 of 53
+==3729443==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729443==    by 0x5411BC6: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x538A5A4: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729443==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729443== 
+==3729443== 688 bytes in 1 blocks are definitely lost in loss record 50 of 53
+==3729443==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729443==    by 0x89894FB: ???
+==3729443==    by 0x5411EBE: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x538A5A4: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729443==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729443== 
+==3729443== 3,312 bytes in 3 blocks are definitely lost in loss record 53 of 53
+==3729443==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729443==    by 0x6947C13: ???
+==3729443==    by 0x694822C: ???
+==3729443==    by 0x68D1637: ???
+==3729443==    by 0x5385AAE: ompi_proc_complete_init_single (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x5388259: ompi_proc_complete_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x5422A97: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729443==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729443==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729443== 
+==3729443== LEAK SUMMARY:
+==3729443==    definitely lost: 16,281 bytes in 40 blocks
+==3729443==    indirectly lost: 15 bytes in 1 blocks
+==3729443==      possibly lost: 0 bytes in 0 blocks
+==3729443==    still reachable: 4,727 bytes in 24 blocks
+==3729443==         suppressed: 0 bytes in 0 blocks
+==3729443== Reachable blocks (those to which a pointer was found) are not shown.
+==3729443== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==3729443== 
+==3729443== For lists of detected and suppressed errors, rerun with: -s
+==3729443== ERROR SUMMARY: 38 errors from 38 contexts (suppressed: 0 from 0)
+==3729444== 
+==3729444== HEAP SUMMARY:
+==3729444==     in use at exit: 21,023 bytes in 65 blocks
+==3729444==   total heap usage: 28,046 allocs, 27,981 frees, 5,256,706 bytes allocated
+==3729444== 
+==3729444== Thread 1:
+==3729444== 1 bytes in 1 blocks are definitely lost in loss record 1 of 53
+==3729444==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729444==    by 0x584B60E: strdup (strdup.c:42)
+==3729444==    by 0x92490F4: ???
+==3729444==    by 0x92387C3: ???
+==3729444==    by 0x5A6E91F: mca_base_framework_components_register (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+==3729444==    by 0x5A6EC95: mca_base_framework_register (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+==3729444==    by 0x5A6ECF3: mca_base_framework_open (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+==3729444==    by 0x5422823: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729444==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729444== 
+==3729444== 9 bytes in 1 blocks are definitely lost in loss record 3 of 53
+==3729444==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729444==    by 0x584B60E: strdup (strdup.c:42)
+==3729444==    by 0x6931D65: ???
+==3729444==    by 0x693233C: ???
+==3729444==    by 0x69327DD: ???
+==3729444==    by 0x699003F: ???
+==3729444==    by 0x69420C7: ???
+==3729444==    by 0x68C9C49: ???
+==3729444==    by 0x60B2FC4: ???
+==3729444==    by 0x5AE9384: orte_finalize (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729444==    by 0x539B308: ompi_mpi_finalize (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x120D9C: Cblacs_exit (in /home/henax/scalapack/task1_launch/program.out)
+==3729444== 
+==3729444== 13 bytes in 1 blocks are definitely lost in loss record 5 of 53
+==3729444==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729444==    by 0x582B1D7: __vasprintf_internal (vasprintf.c:71)
+==3729444==    by 0x58D9362: __asprintf_chk (asprintf_chk.c:34)
+==3729444==    by 0x5A5D322: mca_base_component_to_string (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+==3729444==    by 0x5410EA3: ??? (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x921CB81: ???
+==3729444==    by 0x5422AEE: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729444==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729444== 
+==3729444== 24 bytes in 1 blocks are definitely lost in loss record 8 of 53
+==3729444==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729444==    by 0x582B1D7: __vasprintf_internal (vasprintf.c:71)
+==3729444==    by 0x58D9362: __asprintf_chk (asprintf_chk.c:34)
+==3729444==    by 0x6931D50: ???
+==3729444==    by 0x693233C: ???
+==3729444==    by 0x69327DD: ???
+==3729444==    by 0x699003F: ???
+==3729444==    by 0x69420C7: ???
+==3729444==    by 0x68C9C49: ???
+==3729444==    by 0x60B2FC4: ???
+==3729444==    by 0x5AE9384: orte_finalize (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729444==    by 0x539B308: ompi_mpi_finalize (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444== 
+==3729444== 30 bytes in 1 blocks are definitely lost in loss record 9 of 53
+==3729444==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729444==    by 0x932A4E6: ???
+==3729444==    by 0x932C8F5: ???
+==3729444==    by 0x400647D: call_init.part.0 (dl-init.c:70)
+==3729444==    by 0x4006567: call_init (dl-init.c:33)
+==3729444==    by 0x4006567: _dl_init (dl-init.c:117)
+==3729444==    by 0x5917C84: _dl_catch_exception (dl-error-skeleton.c:182)
+==3729444==    by 0x400DFF5: dl_open_worker (dl-open.c:808)
+==3729444==    by 0x400DFF5: dl_open_worker (dl-open.c:771)
+==3729444==    by 0x5917C27: _dl_catch_exception (dl-error-skeleton.c:208)
+==3729444==    by 0x400E34D: _dl_open (dl-open.c:883)
+==3729444==    by 0x58336BB: dlopen_doit (dlopen.c:56)
+==3729444==    by 0x5917C27: _dl_catch_exception (dl-error-skeleton.c:208)
+==3729444==    by 0x5917CF2: _dl_catch_error (dl-error-skeleton.c:227)
+==3729444== 
+==3729444== 46 bytes in 1 blocks are definitely lost in loss record 14 of 53
+==3729444==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729444==    by 0x584B60E: strdup (strdup.c:42)
+==3729444==    by 0x92B4570: ???
+==3729444==    by 0x400647D: call_init.part.0 (dl-init.c:70)
+==3729444==    by 0x4006567: call_init (dl-init.c:33)
+==3729444==    by 0x4006567: _dl_init (dl-init.c:117)
+==3729444==    by 0x5917C84: _dl_catch_exception (dl-error-skeleton.c:182)
+==3729444==    by 0x400DFF5: dl_open_worker (dl-open.c:808)
+==3729444==    by 0x400DFF5: dl_open_worker (dl-open.c:771)
+==3729444==    by 0x5917C27: _dl_catch_exception (dl-error-skeleton.c:208)
+==3729444==    by 0x400E34D: _dl_open (dl-open.c:883)
+==3729444==    by 0x58336BB: dlopen_doit (dlopen.c:56)
+==3729444==    by 0x5917C27: _dl_catch_exception (dl-error-skeleton.c:208)
+==3729444==    by 0x5917CF2: _dl_catch_error (dl-error-skeleton.c:227)
+==3729444== 
+==3729444== 48 bytes in 1 blocks are definitely lost in loss record 17 of 53
+==3729444==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729444==    by 0x69B383D: ???
+==3729444==    by 0x69B891D: ???
+==3729444==    by 0x69B8EA1: ???
+==3729444==    by 0x69B8EE3: ???
+==3729444==    by 0x698FA70: ???
+==3729444==    by 0x693F63A: ???
+==3729444==    by 0x68CFE4A: ???
+==3729444==    by 0x60B08BF: ???
+==3729444==    by 0x5B5C4CB: orte_init (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729444==    by 0x5422418: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444== 
+==3729444== 49 bytes in 1 blocks are definitely lost in loss record 18 of 53
+==3729444==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729444==    by 0x582B1D7: __vasprintf_internal (vasprintf.c:71)
+==3729444==    by 0x58D9362: __asprintf_chk (asprintf_chk.c:34)
+==3729444==    by 0x6931CDD: ???
+==3729444==    by 0x693233C: ???
+==3729444==    by 0x69327DD: ???
+==3729444==    by 0x699003F: ???
+==3729444==    by 0x69420C7: ???
+==3729444==    by 0x68C9C49: ???
+==3729444==    by 0x60B2FC4: ???
+==3729444==    by 0x5AE9384: orte_finalize (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729444==    by 0x539B308: ompi_mpi_finalize (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444== 
+==3729444== 49 bytes in 1 blocks are definitely lost in loss record 19 of 53
+==3729444==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729444==    by 0x584B60E: strdup (strdup.c:42)
+==3729444==    by 0x6931F23: ???
+==3729444==    by 0x6931D78: ???
+==3729444==    by 0x693233C: ???
+==3729444==    by 0x69327DD: ???
+==3729444==    by 0x699003F: ???
+==3729444==    by 0x69420C7: ???
+==3729444==    by 0x68C9C49: ???
+==3729444==    by 0x60B2FC4: ???
+==3729444==    by 0x5AE9384: orte_finalize (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729444==    by 0x539B308: ompi_mpi_finalize (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444== 
+==3729444== 64 bytes in 1 blocks are definitely lost in loss record 22 of 53
+==3729444==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729444==    by 0x6A2B323: ???
+==3729444==    by 0x698FA87: ???
+==3729444==    by 0x693F63A: ???
+==3729444==    by 0x68CFE4A: ???
+==3729444==    by 0x60B08BF: ???
+==3729444==    by 0x5B5C4CB: orte_init (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729444==    by 0x5422418: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729444==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729444== 
+==3729444== 79 (64 direct, 15 indirect) bytes in 1 blocks are definitely lost in loss record 25 of 53
+==3729444==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729444==    by 0x89CF2AA: ???
+==3729444==    by 0x5A63A9E: mca_base_framework_components_open (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+==3729444==    by 0x5A93745: ??? (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+==3729444==    by 0x5A6ED68: mca_base_framework_open (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+==3729444==    by 0x54227C4: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729444==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729444== 
+==3729444== 128 bytes in 1 blocks are definitely lost in loss record 28 of 53
+==3729444==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729444==    by 0x69A70F1: ???
+==3729444==    by 0x69A70B0: ???
+==3729444==    by 0x693F940: ???
+==3729444==    by 0x68CFE4A: ???
+==3729444==    by 0x60B08BF: ???
+==3729444==    by 0x5B5C4CB: orte_init (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729444==    by 0x5422418: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729444==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729444== 
+==3729444== 128 bytes in 1 blocks are definitely lost in loss record 29 of 53
+==3729444==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729444==    by 0x69A70F1: ???
+==3729444==    by 0x69A70B0: ???
+==3729444==    by 0x693FA40: ???
+==3729444==    by 0x68CFE4A: ???
+==3729444==    by 0x60B08BF: ???
+==3729444==    by 0x5B5C4CB: orte_init (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729444==    by 0x5422418: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729444==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729444== 
+==3729444== 260 bytes in 1 blocks are definitely lost in loss record 30 of 53
+==3729444==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729444==    by 0x698F226: ???
+==3729444==    by 0x693F63A: ???
+==3729444==    by 0x68CFE4A: ???
+==3729444==    by 0x60B08BF: ???
+==3729444==    by 0x5B5C4CB: orte_init (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729444==    by 0x5422418: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729444==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729444== 
+==3729444== 384 bytes in 3 blocks are definitely lost in loss record 31 of 53
+==3729444==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729444==    by 0x89F315B: ???
+==3729444==    by 0x89F39FF: ???
+==3729444==    by 0x89D6A22: ???
+==3729444==    by 0x921CB9B: ???
+==3729444==    by 0x5422AEE: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729444==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729444== 
+==3729444== 384 bytes in 3 blocks are definitely lost in loss record 32 of 53
+==3729444==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729444==    by 0x89F2A30: ???
+==3729444==    by 0x89F39FF: ???
+==3729444==    by 0x89D6A22: ???
+==3729444==    by 0x921CB9B: ???
+==3729444==    by 0x5422AEE: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729444==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729444== 
+==3729444== 552 bytes in 1 blocks are definitely lost in loss record 33 of 53
+==3729444==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729444==    by 0x6947C13: ???
+==3729444==    by 0x694822C: ???
+==3729444==    by 0x68D14B7: ???
+==3729444==    by 0x60B0FB5: ???
+==3729444==    by 0x5B5C4CB: orte_init (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729444==    by 0x5422418: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729444==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729444== 
+==3729444== 552 bytes in 1 blocks are definitely lost in loss record 34 of 53
+==3729444==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729444==    by 0x6947C13: ???
+==3729444==    by 0x694822C: ???
+==3729444==    by 0x68D14B7: ???
+==3729444==    by 0x60B14D5: ???
+==3729444==    by 0x5B5C4CB: orte_init (in /usr/lib/x86_64-linux-gnu/libopen-rte.so.40.30.2)
+==3729444==    by 0x5422418: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729444==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729444== 
+==3729444== 552 bytes in 1 blocks are definitely lost in loss record 35 of 53
+==3729444==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729444==    by 0x6947C13: ???
+==3729444==    by 0x694822C: ???
+==3729444==    by 0x68D14B7: ???
+==3729444==    by 0x538815A: ompi_proc_complete_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x5422A97: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729444==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729444== 
+==3729444== 688 bytes in 1 blocks are definitely lost in loss record 37 of 53
+==3729444==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729444==    by 0x5411BC6: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x5389F63: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729444==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729444== 
+==3729444== 688 bytes in 1 blocks are definitely lost in loss record 38 of 53
+==3729444==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729444==    by 0x89894FB: ???
+==3729444==    by 0x5411EBE: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x5389F63: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729444==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729444== 
+==3729444== 688 bytes in 1 blocks are definitely lost in loss record 39 of 53
+==3729444==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729444==    by 0x5411BC6: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x538A02A: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729444==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729444== 
+==3729444== 688 bytes in 1 blocks are definitely lost in loss record 40 of 53
+==3729444==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729444==    by 0x89894FB: ???
+==3729444==    by 0x5411EBE: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x538A02A: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729444==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729444== 
+==3729444== 688 bytes in 1 blocks are definitely lost in loss record 41 of 53
+==3729444==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729444==    by 0x5411BC6: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x538A0D6: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729444==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729444== 
+==3729444== 688 bytes in 1 blocks are definitely lost in loss record 42 of 53
+==3729444==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729444==    by 0x89894FB: ???
+==3729444==    by 0x5411EBE: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x538A0D6: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729444==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729444== 
+==3729444== 688 bytes in 1 blocks are definitely lost in loss record 43 of 53
+==3729444==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729444==    by 0x5411BC6: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x538A184: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729444==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729444== 
+==3729444== 688 bytes in 1 blocks are definitely lost in loss record 44 of 53
+==3729444==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729444==    by 0x89894FB: ???
+==3729444==    by 0x5411EBE: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x538A184: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729444==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729444== 
+==3729444== 688 bytes in 1 blocks are definitely lost in loss record 45 of 53
+==3729444==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729444==    by 0x5411BC6: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x538A2E6: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729444==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729444== 
+==3729444== 688 bytes in 1 blocks are definitely lost in loss record 46 of 53
+==3729444==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729444==    by 0x89894FB: ???
+==3729444==    by 0x5411EBE: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x538A2E6: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729444==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729444== 
+==3729444== 688 bytes in 1 blocks are definitely lost in loss record 47 of 53
+==3729444==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729444==    by 0x5411BC6: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x538A446: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729444==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729444== 
+==3729444== 688 bytes in 1 blocks are definitely lost in loss record 48 of 53
+==3729444==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729444==    by 0x89894FB: ???
+==3729444==    by 0x5411EBE: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x538A446: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729444==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729444== 
+==3729444== 688 bytes in 1 blocks are definitely lost in loss record 49 of 53
+==3729444==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729444==    by 0x5411BC6: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x538A5A4: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729444==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729444== 
+==3729444== 688 bytes in 1 blocks are definitely lost in loss record 50 of 53
+==3729444==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729444==    by 0x89894FB: ???
+==3729444==    by 0x5411EBE: ompi_op_base_op_select (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x538A5A4: ompi_op_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x542275D: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729444==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729444== 
+==3729444== 3,312 bytes in 3 blocks are definitely lost in loss record 53 of 53
+==3729444==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3729444==    by 0x6947C13: ???
+==3729444==    by 0x694822C: ???
+==3729444==    by 0x68D1637: ???
+==3729444==    by 0x5385AAE: ompi_proc_complete_init_single (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x5388259: ompi_proc_complete_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x5422A97: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x53BBC21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+==3729444==    by 0x1146D5: GetDensityMatricesDiagonalsSequence(int, char**) (in /home/henax/scalapack/task1_launch/program.out)
+==3729444==    by 0x11432C: main (in /home/henax/scalapack/task1_launch/program.out)
+==3729444== 
+==3729444== LEAK SUMMARY:
+==3729444==    definitely lost: 16,281 bytes in 40 blocks
+==3729444==    indirectly lost: 15 bytes in 1 blocks
+==3729444==      possibly lost: 0 bytes in 0 blocks
+==3729444==    still reachable: 4,727 bytes in 24 blocks
+==3729444==         suppressed: 0 bytes in 0 blocks
+==3729444== Reachable blocks (those to which a pointer was found) are not shown.
+==3729444== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==3729444== 
+==3729444== For lists of detected and suppressed errors, rerun with: -s
+==3729444== ERROR SUMMARY: 38 errors from 38 contexts (suppressed: 0 from 0)
