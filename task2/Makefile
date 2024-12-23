@@ -1,6 +1,6 @@
-SCALAPACK_LIB = /home/nastyapion/prac423/scalapack-2.0.2
+SCALAPACK_LIB = /home/henax/scalapack/scalapack-2.0.2
 
-C_FLAGS = -L${SCALAPACK_LIB} -lscalapack -lgfortran -llapack -lblas
+C_FLAGS = -L${SCALAPACK_LIB} -lscalapack -lgfortran -llapack -lblas -Wall -Werror -O3
 CC = mpicxx
 
 all: program run
