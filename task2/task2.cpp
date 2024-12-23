@@ -97,7 +97,7 @@ double* GetLocalH(int rank, int nprocs, int ctx,
         }
     }
 
-    double* localH = rank == 0 ? new double[localSize * localSize] : nullptr;
+    double* localH = rank == 0 ? new double[localSize * localSize]() : nullptr;
     for (int p = 0; p < nprocs; ++p) {
         Cblacs_barrier(ctx, "All");
         if (rank == p) {
@@ -146,7 +146,7 @@ double* GetGlobalH(int rank, int nproc, int ctx,
         n += sizes[i];
     }
 
-    double* H = (rank == 0 ? new double[n * n] : nullptr);
+    double* H = (rank == 0 ? new double[n * n]() : nullptr);
 
     for (int i = 0; Emax - i >= Emin; ++i) {
         double* localH = GetLocalH(rank, nproc, ctx, a, w, N, Emax, i, sizes);
