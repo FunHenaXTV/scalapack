@@ -87,6 +87,9 @@ double* GetLocalH(int rank, int nprocs, int ctx,
                     if (x & 1) {
                         x >>= 1;
                         val = (x & 1) ? a[N - bit_idx - 2] : 0;
+                        if (val) {
+                            break;
+                        }
                     } else {
                         x >>= 1;
                     }
